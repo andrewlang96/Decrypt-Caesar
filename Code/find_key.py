@@ -1,5 +1,6 @@
 import pandas as pd
 import string
+from pathlib import Path
 
 class KeyFinder:
     def __init__(self, model, encrypted_message):
@@ -56,11 +57,25 @@ class KeyFinder:
 
 
 def main():
-    kf1 = KeyFinder("model.csv", "hvwg kwzz oqhiozzm ps sbqfmdhsr bck")
-    kf1.make_pairspace()
-    kf1.get_probs()
-    # print(kf1.pair_space)
-    print(kf1.key_pro)
+    while True:
+        model = input("Enter the name of the model you would like you use: ")
+        file_path = Path(model)
+        if file_path.is_path():
+            break
+        else:
+            print(f"{model} is not a file. Make sure you include the full path.")
+    encrypted_text = input("Enter the encrypted text: ")
+
+    key_finder = KeyFinder(model, encrypted_text)
+    key_finder.make_pairspace()
+    key_finder.get_probs()
+    print(key_finder.key_pro)
+    
+    # kf1 = KeyFinder("model.csv", "hvwg kwzz oqhiozzm ps sbqfmdhsr bck")
+    # kf1.make_pairspace()
+    # kf1.get_probs()
+    # # print(kf1.pair_space)
+    # print(kf1.key_pro)
 
 
 if __name__ == "__main__":
