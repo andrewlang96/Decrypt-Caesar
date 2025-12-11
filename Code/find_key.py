@@ -60,7 +60,7 @@ def main():
     while True:
         model = input("Enter the name of the model you would like you use: ")
         file_path = Path(model)
-        if file_path.is_path():
+        if file_path.exists():
             break
         else:
             print(f"{model} is not a file. Make sure you include the full path.")

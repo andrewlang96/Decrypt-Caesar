@@ -1,6 +1,7 @@
 import pandas as pd
 import string
 from pathlib import Path
+from colorama import Fore, Style
 
 class Model:
     def __init__(self, training_text):
@@ -45,21 +46,23 @@ def main():
     while True: #Get training text
         training_text = input("Enter the name of the training text file: ")
         file_path = Path(training_text) #Check if the file exists
-        if file_path.is_path():
+        if file_path.exists():
             break
         else:
-            print(f"{traing_text} does not exist\nEnsure that you've included the full path to your file.")
+            print(f"{Fore.RED}{training_text} does not exist\nEnsure that you've included the full path to your file.{Style.RESET_ALL}")
     while True: #Get location to put the model
-        csv_file = input("Enter the name of the csv file that you would like tor write the model to: ")
-        file_path = Path(csv_file):
-        if file_path.is_path(): #If the file alredy exists
-            overwrite_check = input(f"{csv_file} already exists. Would you like to overwrite this file?[y/n]: ") #Check if they want to overwrite it
-        if overwrite_check == "y":
-            break
+        model_file = input("Enter the name of the csv file that you would like tor write the model to: ")
+        file_path = Path(model_file)
+        if file_path.exists(): #If the file alredy exists
+            overwrite_check = input(f"{Fore.RED}{model_file} already exists. Would you like to overwrite this file?[y/n]: {Style.RESET_ALL}") #Check if they want to overwrite it
+            if overwrite_check == "y":
+                break
+            else:
+                continue
         else:
-            continue
+            break
     model = Model(training_text)
-    model.make_model("model.csv")
+    model.make_model(model_file)
 
 
     # m1 = Model("training_text.txt")
