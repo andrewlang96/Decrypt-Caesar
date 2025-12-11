@@ -1,5 +1,6 @@
 import pandas as pd
 import string
+from pathlib import Path
 
 class Model:
     def __init__(self, training_text):
@@ -41,9 +42,29 @@ class Model:
         self.pair_df.to_csv(csv_file, index=False) #Write DataFrame to csv file
 
 def main():
-    m1 = Model("training_text.txt")
-    m1.make_model("model.csv")
-    print(m1.pair_df, f"\nTotal Pairs: {m1.pair_count}\nUnique Pairs: {len(m1.adj_pairs)}")
+    while True: #Get training text
+        training_text = input("Enter the name of the training text file: ")
+        file_path = Path(training_text) #Check if the file exists
+        if file_path.is_path():
+            break
+        else:
+            print(f"{traing_text} does not exist\nEnsure that you've included the full path to your file.")
+    while True: #Get location to put the model
+        csv_file = input("Enter the name of the csv file that you would like tor write the model to: ")
+        file_path = Path(csv_file):
+        if file_path.is_path(): #If the file alredy exists
+            overwrite_check = input(f"{csv_file} already exists. Would you like to overwrite this file?[y/n]: ") #Check if they want to overwrite it
+        if overwrite_check == "y":
+            break
+        else:
+            continue
+    model = Model(training_text)
+    model.make_model("model.csv")
+
+
+    # m1 = Model("training_text.txt")
+    # m1.make_model("model.csv")
+    # print(m1.pair_df, f"\nTotal Pairs: {m1.pair_count}\nUnique Pairs: {len(m1.adj_pairs)}")
 
 
 
