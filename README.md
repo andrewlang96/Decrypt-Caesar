@@ -12,8 +12,13 @@ Because the rank of each letter in the text is shifted by the same amount, the d
 ```python
 text = "text" #Text before encryption
 letter_pairs = ["te", "xt"] #Text broken up into adjacent letter pairs
-pair_rank = [(19, 4), (23, 19)] #Letter pairs in terms of their rank
-pair_rank_difference = [, 1] #Difference between the rank of each letter in letter pairs
+pair_rank = [(20, 5), (24, 20)] #Letter pairs in terms of their rank
+pair_rank_difference = [, 1] #Distance between adjacent letters before encryption
+
+encrypted_text = caesar(text, 2) #Encrypt the original text by adding 2 to the rank of each letter
+encypted_letter_pairs = ["vg", "xv"]
+encrypted_pair_rank = [25]
 ```
+
 
 
