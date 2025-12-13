@@ -1,8 +1,7 @@
 # Decrypt Caesar
 This project decrypts encrypted text by analysing the frequency of different letter pairs in the text.
- 
 
-![Some gif of the main program](no gif yet)
+![Demo of program](demo.gif)
 ## Description
 #### Encryption
 The text that this program decrypts has been encrypted with a caesar cypher. The 26 letter in the alphabet can each be assigned a rank from "a" = 0 to "z" = 25. A caesar cypher takes in a string of text, **"abcd"** for example, and and some integer **n** mod26, and uses that integer to encrypt the text by adding **n** to the rank of each letter in the text mod26. For example, `caesar("abcd", 3) = "defg"`. In this function, we took all the letters
