@@ -1,7 +1,7 @@
 # Decrypt Caesar
 This project decrypts encrypted text by analysing the frequency of different letter pairs in the text.
 
-![Demo of program](Code/demo.gif)
+![Demo of program](assets/demo.gif)
 ## Description
 #### Encryption
 An integer ***rank*** (0 to 25) can be assigned to each letter of the alphabet to represents where it lies from "a" to "z". A method of encryption know as a caesar ciphre takes in a string of letters, maps them to their ***rank***, adds some constant ***key*** value to each rank, and then maps these new ranks back to letters.
