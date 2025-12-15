@@ -11,7 +11,7 @@ class KeyFinder:
             model ("file.csv"): A csv file produced by make_model.py that contains letter pairs and thier reletive frequency in written english.
             encrypted_message (str): A string that has been encrypted using a caesar cypher.
         """
-        self.par_freq_df = pd.read_csv(model, nrows=40)
+        self.par_freq_df = pd.read_csv(model, nrows=40 )
         self.key_pro = {k:0 for k in range(0, 26)} #Keys 0-25 and the probabilety that they are the correct key
         self.encrypted_message = encrypted_message
         self.alphanum = {k:v for (k, v) in zip(string.ascii_lowercase, range(1, 27))} #Map letters to numbers
