@@ -64,10 +64,11 @@ def main():
     ci = CryptInterface("your_model_here.csv") #Pass the file name of you model here
     ci.main_loop()
 ```
-## Key Graph
+#### Key Graph
 ![Key graph](assets/graph.png)
 
 Press `Enter` to toggle through the key graph. At the top of the graph is the encrypted text and at the bottom is the text decrypted with the selected key. When you select the correct key the decrypted text will display the original message.
+
 
 
 
