@@ -67,7 +67,8 @@ def main():
 #### Key Graph
 ![Key graph](assets/graph.png)
 
-Press `Enter` to toggle through the key graph. At the top of the graph is the encrypted text and at the bottom is the text decrypted with the selected key. When you select the correct key the decrypted text will display the original message.
+Press `Enter` to toggle through the key graph. At the top of the graph is the encrypted text and at the bottom is the text decrypted with the selected key. When you select the correct key the decrypted text will display the original message. Enter `q` to back out of the graph to the start screen and then enter `q` again to quit.
+
 
 
 
